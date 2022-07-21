@@ -5,7 +5,7 @@ $color-bright-blue: hsl(245, 75%, 52%);
 $color-desaturated-blue: hsl(224, 23%, 55%);
 $color-pale-blue: hsl(225, 100%, 94%);
 $color-very-pale-blue: hsl(225, 100%, 98%);
-$color-pale-blue-translucent: hsla(225, 100%, 94%, 0.35);
+$color-white: #fff;
 $color-shadow: hsla(245, 75%, 52%, 0.25);
 $color-hover: mix($color-bright-blue, $color-pale-blue, $weight: 60%);
 
@@ -114,7 +114,7 @@ body {
 }
 
 .card{
-    background-color: $color-very-pale-blue;
+    background-color: $color-white;
     width: $width-card;
     border-radius: 1.25rem;
     overflow: hidden;
@@ -129,7 +129,7 @@ body {
         padding: $padding-card;
         text-align: center;
         .plan {
-            background-color: $color-pale-blue-translucent;
+            background-color: $color-very-pale-blue;
             padding: $padding-plan;
             border-radius: 12px;
             margin: 24px 0;
