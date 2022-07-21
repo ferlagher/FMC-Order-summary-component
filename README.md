@@ -32,12 +32,12 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/responsive-component-without-breakpoints-wji40H3dEv
 - Live Site URL: https://ferlagher.github.io/FMC-Order-summary-component
 
 ## My process
 
-I challenge myself to build this solution without using breakpoints. I started learning Sass a few day ago, so I wanted to try out the functions. I only use one media query for changing the background image. The other elements use a `clamp()` function to scale according to the viewport size. The `min()` function inside `clapm()` makes the card `width:100%` only in small devices.
+I challenged myself to build this solution without using breakpoints. I started learning Sass a few day ago, so I wanted to try out the functions. I only used one media query for changing the background image. The other elements use a `clamp()` function to scale according to the viewport size. The `min()` function inside `clapm()` makes the card `width:100%` only in small devices.
 
 ### Built with
 
