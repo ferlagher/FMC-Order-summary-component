@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+$color-dark-blue: hsl(223, 47%, 23%);
+$color-bright-blue: hsl(245, 75%, 52%);
+$color-desaturated-blue: hsl(224, 23%, 55%);
+$color-pale-blue: hsl(225, 100%, 94%);
+$color-very-pale-blue: hsl(225, 100%, 98%);
+$color-pale-blue-translucent: hsla(225, 100%, 94%, 0.35);
+$color-shadow: hsla(245, 75%, 52%, 0.25);
+
+$font-family: 'Red Hat Display', sans-serif;
+
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+$shadow-box: 0 1rem 2rem $color-shadow;
+
+$font-size-lg: clamp(1.25rem, 2.5vw, 1.625rem);
+$font-size-md: clamp(0.9375rem, 1.5vw, 1rem);
+$font-size-sm: clamp(0.8125rem , 1.5vw, 0.875rem);
+
+//690 - 990 breaks layout
+//to do: hover transitions
+
+$width-card: clamp(min(100%, 327px), 33vw, 450px);
+
+$padding-card: clamp(24px, 3.47vw, 50px);
+$padding-plan: clamp(16px, 1.67vw, 24px);
+
+h1, b{
+    font-weight: $font-weight-black;
+    color: $color-dark-blue;
+}
+
+h1 {
+    font-size: $font-size-lg;
+    line-height: 1em;
+    margin-bottom: 0.8em;
+}
+
+p {
+    font-weight: $font-weight-medium;
+    line-height: 1.5em;
+}
+
+a {
+    font-weight: $font-weight-black;
+    color: $color-bright-blue;
+}
+
+button {
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-sm;
+    letter-spacing: 0.025em;
+    border: none;
+    &.proceed {
+        color: $color-very-pale-blue;
+        background-color: $color-bright-blue;
+        border-radius: 12px;
+        box-shadow: $shadow-box;
+        padding: 1rem;
+        width: 100%;
+    }
+    &.cancel {
+        font-weight: $font-weight-black;
+        color: $color-desaturated-blue;
+        background-color: transparent;
+        margin: 1.5em 0 0.5em 0;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $color-pale-blue url(../images/pattern-background-desktop.svg) top center / contain no-repeat;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto $font-size-lg;
+    font-family: $font-family;
+    color: $color-desaturated-blue;
+    main {
+        font-size: $font-size-md;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    footer {
+        font-size: $font-size-sm;
+        text-align: center;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.card{
+    background-color: $color-very-pale-blue;
+    width: $width-card;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: $shadow-box;
+    margin: 24px;
+    .hero {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    &-body {
+        padding: $padding-card;
+        text-align: center;
+        .plan {
+            background-color: $color-pale-blue-translucent;
+            padding: $padding-plan;
+            border-radius: 12px;
+            margin: 24px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .details {
+                text-align: center;
+                margin-left: 1em;
+            }
+            a {
+                font-size: $font-size-sm;
+                margin-left: auto;
+            }
+        }
+    }
+}

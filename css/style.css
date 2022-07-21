@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+h1, b {
+  font-weight: 900;
+  color: hsl(223deg, 47%, 23%);
+}
+
+h1 {
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  line-height: 1em;
+  margin-bottom: 0.8em;
+}
+
+p {
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+a {
+  font-weight: 900;
+  color: hsl(245deg, 75%, 52%);
+}
+
+button {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
+  letter-spacing: 0.025em;
+  border: none;
+}
+button.proceed {
+  color: hsl(225deg, 100%, 98%);
+  background-color: hsl(245deg, 75%, 52%);
+  border-radius: 12px;
+  box-shadow: 0 1rem 2rem hsla(245deg, 75%, 52%, 0.25);
+  padding: 1rem;
+  width: 100%;
+}
+button.cancel {
+  font-weight: 900;
+  color: hsl(224deg, 23%, 55%);
+  background-color: transparent;
+  margin: 1.5em 0 0.5em 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(225deg, 100%, 94%) url(../images/pattern-background-desktop.svg) top center/contain no-repeat;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto clamp(1.25rem, 2.5vw, 1.625rem);
+  font-family: "Red Hat Display", sans-serif;
+  color: hsl(224deg, 23%, 55%);
+}
+body main {
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body footer {
+  font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
+  text-align: center;
+}
+body footer a {
+  text-decoration: none;
+}
+
+.card {
+  background-color: hsl(225deg, 100%, 98%);
+  width: clamp(min(100%, 327px), 33vw, 450px);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem hsla(245deg, 75%, 52%, 0.25);
+  margin: 24px;
+}
+.card .hero {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card-body {
+  padding: clamp(24px, 3.47vw, 50px);
+  text-align: center;
+}
+.card-body .plan {
+  background-color: hsla(225deg, 100%, 94%, 0.35);
+  padding: clamp(16px, 1.67vw, 24px);
+  border-radius: 12px;
+  margin: 24px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.card-body .plan .details {
+  text-align: center;
+  margin-left: 1em;
+}
+.card-body .plan a {
+  font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
+  margin-left: auto;
+}/*# sourceMappingURL=style.css.map */
