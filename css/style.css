@@ -95,7 +95,7 @@ body footer a {
   border-radius: 1.25rem;
   overflow: hidden;
   box-shadow: 0 1rem 2rem hsla(245deg, 75%, 52%, 0.25);
-  margin: 3vw;
+  margin: 0 min(24px, 3vw);
 }
 .card .hero {
   width: 100%;
