@@ -90,7 +90,7 @@ body footer a {
 }
 
 .card {
-  background-color: hsl(225deg, 100%, 98%);
+  background-color: #fff;
   width: clamp(min(100%, 327px), 33vw, 450px);
   border-radius: 1.25rem;
   overflow: hidden;
@@ -107,7 +107,7 @@ body footer a {
   text-align: center;
 }
 .card-body .plan {
-  background-color: hsla(225deg, 100%, 94%, 0.35);
+  background-color: hsl(225deg, 100%, 98%);
   padding: clamp(min(4.3vw, 16px), 1.67vw, 24px);
   border-radius: 12px;
   margin: 24px 0;
