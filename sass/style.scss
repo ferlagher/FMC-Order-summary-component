@@ -7,6 +7,9 @@ $color-pale-blue: hsl(225, 100%, 94%);
 $color-very-pale-blue: hsl(225, 100%, 98%);
 $color-pale-blue-translucent: hsla(225, 100%, 94%, 0.35);
 $color-shadow: hsla(245, 75%, 52%, 0.25);
+$color-hover: mix($color-bright-blue, $color-pale-blue, $weight: 60%);
+
+$shadow-box: 0 1rem 2rem $color-shadow;
 
 $font-family: 'Red Hat Display', sans-serif;
 
@@ -14,19 +17,14 @@ $font-weight-medium: 500;
 $font-weight-bold: 700;
 $font-weight-black: 900;
 
-$shadow-box: 0 1rem 2rem $color-shadow;
-
-$font-size-lg: clamp(1.25rem, 2.5vw, 1.625rem);
-$font-size-md: clamp(0.9375rem, 1.5vw, 1rem);
-$font-size-sm: clamp(0.8125rem , 1.5vw, 0.875rem);
-
-//690 - 990 breaks layout
-//to do: hover transitions
+$font-size-lg: clamp(min(1.25rem, 5.7vw), 2.5vw, 1.625rem);
+$font-size-md: clamp(min(0.9375rem, 5vw), 1.5vw, 1rem);
+$font-size-sm: clamp(min(0.8125rem, 4.3vw) , 1.5vw, 0.875rem);
 
 $width-card: clamp(min(100%, 327px), 33vw, 450px);
 
-$padding-card: clamp(24px, 3.47vw, 50px);
-$padding-plan: clamp(16px, 1.67vw, 24px);
+$padding-card: clamp(min(6.4vw, 24px), 3.47vw, 50px);
+$padding-plan: clamp(min(4.3vw, 16px), 1.67vw, 24px);
 
 h1, b{
     font-weight: $font-weight-black;
@@ -47,6 +45,9 @@ p {
 a {
     font-weight: $font-weight-black;
     color: $color-bright-blue;
+    &:hover {
+        color: $color-hover;
+    }
 }
 
 button {
@@ -55,6 +56,9 @@ button {
     font-size: $font-size-sm;
     letter-spacing: 0.025em;
     border: none;
+    &:hover {
+        cursor: pointer;
+    }
     &.proceed {
         color: $color-very-pale-blue;
         background-color: $color-bright-blue;
@@ -62,12 +66,18 @@ button {
         box-shadow: $shadow-box;
         padding: 1rem;
         width: 100%;
+        &:hover {
+            background-color: $color-hover;
+        }
     }
     &.cancel {
         font-weight: $font-weight-black;
         color: $color-desaturated-blue;
         background-color: transparent;
-        margin: 1.5em 0 0.5em 0;
+        margin: $padding-plan 0 0em 0;
+        &:hover {
+            color:$color-dark-blue
+        }
     }
 }
 
@@ -79,9 +89,13 @@ button {
 
 body {
     background: $color-pale-blue url(../images/pattern-background-desktop.svg) top center / contain no-repeat;
+    @media (max-width: 376px) {
+        background: $color-pale-blue url(../images/pattern-background-mobile.svg) top center / contain no-repeat;
+    }
+    background-attachment: fixed;
     min-height: 100vh;
     display: grid;
-    grid-template-rows: auto $font-size-lg;
+    grid-template-rows: auto max-content;
     font-family: $font-family;
     color: $color-desaturated-blue;
     main {
@@ -105,7 +119,7 @@ body {
     border-radius: 1.25rem;
     overflow: hidden;
     box-shadow: $shadow-box;
-    margin: 24px;
+    margin: 3vw;
     .hero {
         width: 100%;
         height: auto;
@@ -120,11 +134,15 @@ body {
             border-radius: 12px;
             margin: 24px 0;
             display: flex;
+            flex-wrap: wrap;
             justify-content: flex-start;
             align-items: center;
+            img {
+                width: min(3rem, 12.8vw);
+            }
             .details {
+                margin-left: $padding-plan;
                 text-align: center;
-                margin-left: 1em;
             }
             a {
                 font-size: $font-size-sm;

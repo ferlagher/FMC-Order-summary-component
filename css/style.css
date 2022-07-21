@@ -5,7 +5,7 @@ h1, b {
 }
 
 h1 {
-  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-size: clamp(min(1.25rem, 5.7vw), 2.5vw, 1.625rem);
   line-height: 1em;
   margin-bottom: 0.8em;
 }
@@ -19,13 +19,19 @@ a {
   font-weight: 900;
   color: hsl(245deg, 75%, 52%);
 }
+a:hover {
+  color: #7b75ec;
+}
 
 button {
   font-family: "Red Hat Display", sans-serif;
   font-weight: 700;
-  font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
+  font-size: clamp(min(0.8125rem, 4.3vw), 1.5vw, 0.875rem);
   letter-spacing: 0.025em;
   border: none;
+}
+button:hover {
+  cursor: pointer;
 }
 button.proceed {
   color: hsl(225deg, 100%, 98%);
@@ -35,11 +41,17 @@ button.proceed {
   padding: 1rem;
   width: 100%;
 }
+button.proceed:hover {
+  background-color: #7b75ec;
+}
 button.cancel {
   font-weight: 900;
   color: hsl(224deg, 23%, 55%);
   background-color: transparent;
-  margin: 1.5em 0 0.5em 0;
+  margin: clamp(min(4.3vw, 16px), 1.67vw, 24px) 0 0em 0;
+}
+button.cancel:hover {
+  color: hsl(223deg, 47%, 23%);
 }
 
 * {
@@ -50,20 +62,27 @@ button.cancel {
 
 body {
   background: hsl(225deg, 100%, 94%) url(../images/pattern-background-desktop.svg) top center/contain no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto clamp(1.25rem, 2.5vw, 1.625rem);
+  grid-template-rows: auto -webkit-max-content;
+  grid-template-rows: auto max-content;
   font-family: "Red Hat Display", sans-serif;
   color: hsl(224deg, 23%, 55%);
 }
+@media (max-width: 376px) {
+  body {
+    background: hsl(225deg, 100%, 94%) url(../images/pattern-background-mobile.svg) top center/contain no-repeat;
+  }
+}
 body main {
-  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  font-size: clamp(min(0.9375rem, 5vw), 1.5vw, 1rem);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 body footer {
-  font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
+  font-size: clamp(min(0.8125rem, 4.3vw), 1.5vw, 0.875rem);
   text-align: center;
 }
 body footer a {
@@ -76,7 +95,7 @@ body footer a {
   border-radius: 1.25rem;
   overflow: hidden;
   box-shadow: 0 1rem 2rem hsla(245deg, 75%, 52%, 0.25);
-  margin: 24px;
+  margin: 3vw;
 }
 .card .hero {
   width: 100%;
@@ -84,23 +103,27 @@ body footer a {
   display: block;
 }
 .card-body {
-  padding: clamp(24px, 3.47vw, 50px);
+  padding: clamp(min(6.4vw, 24px), 3.47vw, 50px);
   text-align: center;
 }
 .card-body .plan {
   background-color: hsla(225deg, 100%, 94%, 0.35);
-  padding: clamp(16px, 1.67vw, 24px);
+  padding: clamp(min(4.3vw, 16px), 1.67vw, 24px);
   border-radius: 12px;
   margin: 24px 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
 }
+.card-body .plan img {
+  width: min(3rem, 12.8vw);
+}
 .card-body .plan .details {
+  margin-left: clamp(min(4.3vw, 16px), 1.67vw, 24px);
   text-align: center;
-  margin-left: 1em;
 }
 .card-body .plan a {
-  font-size: clamp(0.8125rem, 1.5vw, 0.875rem);
+  font-size: clamp(min(0.8125rem, 4.3vw), 1.5vw, 0.875rem);
   margin-left: auto;
 }/*# sourceMappingURL=style.css.map */
